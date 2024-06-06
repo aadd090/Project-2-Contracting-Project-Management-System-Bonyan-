@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"rel="stylesheet">
+    <style>
+       body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to right, #5de0e6, #004aad); /* Blue to green gradient */
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+        .nav-links {
+            color: #000;
+            text-decoration: none;
+            margin-right: 16px;
+            font-size: 1rem;
+        }
+        .login-form {
+            max-width: 320px;
+            margin: 2rem auto;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .form-input {
+            border: 2px solid #000;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            width: 100%;
+        }
+        .form-check-label {
+            margin-left: 0.5rem;
+        }
+       
+        .forgot-password {
+            text-align: right;
+            display: block;
+            margin-top: 0.5rem;
+            color: #004aad;
+            cursor: pointer;
+        }
+        .link-back {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: block;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .button-blue {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-outline {
+            background-color: transparent;
+            color: #004aad;
+            padding: 10px 15px;
+            border: 2px solid #004aad;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .button-Serves {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .content-box {
+            background-color: #ffffff;
+            color: rgb(13, 125, 216);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h3 {
+            color: #023151;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #37d0d87f, #004bad);
+            background-image: url('http://localhost/img/BB2.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0; /* Blue to green gradient */
+        }
+       
+    </style>
+</head>
+<body class="gradient-bg">
+    <header class="bg-white">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/28d4mwyG/logo.png" href="HomePageVIstorT.html" alt="Bonyan" class="mr-1">
+                <a href="HomePageVIstorT.html" class="text-2xl font-bold">Bonyan | بُنيان</a>
+            </div>
+            <nav>
+                <a href="HomePageVIstorT.html" class="text-blue-600 hover:text-blue-800">Home</a>
+
+                <button class="button-outline mx-1" onclick="location.href='Login.html';">Login</button>
+                <button class="button-blue mx-1" onclick="location.href='register.html';">Register</button>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <form id="loginForm" action="http://localhost/project_Bonyan/code/CODE_PHP/Login.php" method="post" class="login-form">
+            <label for="username" class="sr-only">Username</label>
+            Username
+            <input type="text" id="username" name="username" class="form-input" placeholder="Username">
+    
+            <label for="password" class="sr-only">Password</label>
+            Password
+            <input type="password" id="password" name="password" class="form-input" placeholder="Password">
+    
+            <div class="flex items-center mb-4">
+                <input type="checkbox" id="remember-me" class="form-checkbox">
+                <label for="remember-me" class="form-check-label">Remember me</label>
+            </div>
+        
+            <a class="forgot-password" onclick="location.href='Reset_Password.html';">Reset Password!</a>
+            
+            <button type="submit" class="button-outline mx-1">Login</button> <!-- استبدال الزر بزر نوع الإرسال -->
+        </form>
+    </main>
+    <footer class="bg-white py-7 mt-44">
+        <p class="text-center text-gray-800">&copy; 2024 Bonyan Contracting. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginForm = document.querySelector('.login-form');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginButton = loginForm.querySelector('.button-outline');
+
+        // Adding an event listener to the form submission
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the form's default submission action
+
+            // Basic validation
+            if (usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
+                alert('Please enter both username and password.');
+                return;
+            }
+
+            // Proceeding with form submission (Redirecting in this case)
+            console.log('Proceeding with login...');
+
+            // Redirecting to PHP processing page (http://localhost/project_Bonyan/code/CODE_PHP/Login.php) after form submission
+            loginForm.action = 'http://localhost/project_Bonyan/code/CODE_PHP/Login.php';
+            loginForm.submit();
+        });
+
+        // Optional: Reset Password Link handling
+        const resetPasswordLink = document.querySelector('.forgot-password');
+        resetPasswordLink.addEventListener('click', (event) => {
+            // Handle the reset password action
+            console.log('Redirecting to reset password page...');
+            // window.location.href = 'Reset_Password.html'; // Uncomment to enable redirection
+        });
+
+        // Remember Me Checkbox (Example handling)
+        const rememberMeCheckbox = document.getElementById('remember-me');
+        rememberMeCheckbox.addEventListener('change', () => {
+            if (rememberMeCheckbox.checked) {
+                console.log('User chose to be remembered.');
+            } else {
+                console.log('User chose not to be remembered.');
+            }
+        });
+    });
+</script>

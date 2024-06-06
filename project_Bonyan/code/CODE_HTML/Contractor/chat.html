@@ -1,0 +1,174 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonyan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .search-bar {
+            width: 200px;
+            height: 40px;
+            border: 2px solid #000000;
+            padding-left: 10px;
+            border-radius: 9999px; /* rounded edges */
+            position: relative;
+        }
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 0.95rem;
+            transform: translateY(-50%);
+        }
+        .button-blue {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-outline {
+            background-color: transparent;
+            color: #004aad;
+            padding: 10px 15px;
+            border: 2px solid #004aad;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .button-Serves {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .content-box {
+            background-color: #ffffff;
+            color: rgb(13, 125, 216);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h3 {
+            color: #023151;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #37d0d87f, #004bad);
+            background-image: url('http://localhost/img/BB2.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0; /* Blue to green gradient */
+        }
+    </style>
+</head>
+<head>
+<body class="gradient-bg">
+    <header class="bg-white py-1">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/28d4mwyG/logo.png" href="HomePageVIstorT.html" alt="Bonyan" class="mr-2">
+                <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Contractor_Dashboard.html" class="text-2xl font-bold">Bonyan | بُنيان</a>
+            </div>
+            <nav>
+                <nav class="flex items-center">
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Contractor_Dashboard.html" class="text-gray-700 mx-3">Home</a>
+
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Bills.html" class="text-gray-700 mx-3">Bills</a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Notifications.html" class="text-gray-700 mx-5"><i class="fas fa-bell"></i></a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/chat.html" class="text-gray-700 mx-5"><i class="fas fa-comment-alt"></i></a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Account.html" class="text-gray-700 mx-5"><i class="fas fa-user-circle"></i></a>
+                 </nav>
+            </nav>
+            
+        </div>
+    </header>
+    
+    
+    <form  action="http://localhost/project_Bonyan/code/CODE_PHP/project_management.php" method="post">
+
+        <div class="container mx-auto p-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-3xl text-blue-800 font-bold mb-4">Messages:</h2>
+                <div class="space-y-4">
+                    <!-- PHP code to dynamically generate message entries -->
+                 <?php foreach ($messages as $message): ?>
+                 <div class="bg-gray-100 p-4 rounded-md">
+                 <p class="text-gray-800"><?= htmlspecialchars($message['userName']); ?></p>
+                 <a href="<?= htmlspecialchars($message['detailLink']); ?>" class="text-blue-500 hover:text-blue-700">Details</a>
+                  </div>
+                   <?php endforeach; ?>
+                    <!-- Dynamic message list here -->
+                    <div class="bg-gray-100 p-4 rounded-md">
+                        <p class="text-gray-800">User 1</p>
+                        <a href="Sand.html" class="text-blue-500 hover:text-blue-700">Details</a>
+                    </div>
+                    <!-- Repeat for each user -->
+                    <div class="bg-gray-100 p-4 rounded-md">
+                        <p class="text-gray-800">User 2</p>
+                        <a href="Sand.html" class="text-blue-500 hover:text-blue-700">Details</a>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-md">
+                        <p class="text-gray-800">User 3</p>
+                        <a href="Sand.html" class="text-blue-500 hover:text-blue-700">Details</a>
+                    </div>
+                    <!-- ... -->
+                </div>
+            </div>
+        </div>
+    </form>
+    
+    <footer class="bg-white py-7 mt-44">
+        <p class="text-center text-gray-800">&copy; 2024 Bonyan Contracting. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Example messages data
+        const messages = [
+            { userName: 'User 1', detailLink: 'Sand.html' },
+            { userName: 'User 2', detailLink: 'Sand.html' },
+            { userName: 'User 3', detailLink: 'Sand.html' },
+            // Add more message objects as needed
+        ];
+    
+        // Select the container where messages will be displayed
+        const messagesContainer = document.querySelector('.space-y-4'); // Adjust this selector to target your specific messages container
+    
+        // Clear existing content (if necessary)
+        messagesContainer.innerHTML = '';
+    
+        // Iterate over the messages and create HTML elements for each
+        messages.forEach(message => {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('bg-gray-100', 'p-4', 'rounded-md');
+    
+            const userNameP = document.createElement('p');
+            userNameP.classList.add('text-gray-800');
+            userNameP.textContent = message.userName;
+    
+            const detailLinkA = document.createElement('a');
+            detailLinkA.setAttribute('href', message.detailLink);
+            detailLinkA.classList.add('text-blue-500', 'hover:text-blue-700');
+            detailLinkA.textContent = 'Details';
+    
+            // Append the user name and detail link to the message div
+            messageDiv.appendChild(userNameP);
+            messageDiv.appendChild(detailLinkA);
+    
+            // Append the message div to the container
+            messagesContainer.appendChild(messageDiv);
+        });
+    });
+    </script>
+    
+    

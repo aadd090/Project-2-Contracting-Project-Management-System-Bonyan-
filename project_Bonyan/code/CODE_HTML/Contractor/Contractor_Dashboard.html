@@ -1,0 +1,369 @@
+<html lang="en">
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonyan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .search-bar {
+            width: 200px;
+            height: 40px;
+            border: 2px solid #000000;
+            padding-left: 10px;
+            border-radius: 9999px; /* rounded edges */
+            position: relative;
+        }
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 0.95rem;
+            transform: translateY(-50%);
+        }
+        .button-blue {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-outline {
+            background-color: transparent;
+            color: #004aad;
+            padding: 10px 15px;
+            border: 2px solid #004aad;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .button-Serves {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .content-box {
+            background-color: #ffffff;
+            color: rgb(13, 125, 216);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h3 {
+            color: #023151;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #37d0d87f, #004bad);
+            background-image: url('http://localhost/img/BB2.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0; /* Blue to green gradient */
+        }
+    </style>
+</head>
+<head>
+<body class="gradient-bg">
+    <header class="bg-white py-1">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/28d4mwyG/logo.png"  alt="Bonyan" class="mr-2">
+                <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Contractor_Dashboard.html" class="text-2xl font-bold">Bonyan | بُنيان</a>
+            </div>
+            <nav>
+                <nav class="flex items-center">
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Contractor_Dashboard.html" class="text-gray-700 mx-3">Home</a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Bills.html" class="text-gray-700 mx-3">Bills</a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Notifications.html" class="text-gray-700 mx-5"><i class="fas fa-bell"></i></a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/chat.html" class="text-gray-700 mx-5"><i class="fas fa-comment-alt"></i></a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Account.html" class="text-gray-700 mx-5"><i class="fas fa-user-circle"></i></a>
+                 </nav>
+            </nav>
+        </div>
+    </header>
+
+<body class="bg-gradient-to-r from-blue-200 to-blue-500">
+            <!-- Main Content -->
+    <main class="container mx-auto py-6">
+        <form action="http://localhost/project_Bonyan/code/CODE_PHP/Contractor_Dashboard.php" method="post">
+        <!-- Project Tenders -->
+        <section class="mb-6">
+            <div class="container mx-auto my-6">
+                <div class="bg-white p-5 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold text-gray-700 mb-4">Projects for Tender</h2>
+            
+                    <div class="mb-5">
+                        <input type="search" placeholder="Search tenders..." class="w-full p-2 border rounded">
+                    </div>
+            
+                    <div class="mb-4">
+                        <h3 class="text-lg font-semibold">First Project</h3>
+                        <p class="text-gray-600"><strong>Requirements:</strong> Project description and requirements...</p>
+                        <p class="text-gray-600"><strong>Cost:</strong> Estimated project cost...</p>
+                        <p class="text-gray-600"><strong>Plans & Designs:</strong> <a href="#" class="text-blue-500">PDF</a> | <a href="#" class="text-blue-500">PDF</a></p>
+                        <div class="mt-3 flex justify-start space-x-4">
+                            <input type="text" placeholder="Enter price (SAR)" class="border p-2 rounded">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Submit Offer</button>
+                            <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">Delete</button>
+                            <button class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded">Edit</button>
+                        </div>
+                    </div>
+            
+                    <div class="mb-4">
+                        <h3 class="text-lg font-semibold">Second Project</h3>
+                        <p class="text-gray-600"><strong>Requirements:</strong> Project description and requirements...</p>
+                        <p class="text-gray-600"><strong>Cost:</strong> Estimated project cost...</p>
+                        <p class="text-gray-600"><strong>Plans & Designs:</strong> <a href="#" class="text-blue-500">PDF</a> | <a href="#" class="text-blue-500">PDF</a></p>
+                        <div class="mt-3 flex justify-start space-x-4">
+                            <input type="text" placeholder="Enter price (SAR)" class="border p-2 rounded">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Submit Offer</button>
+                            <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">Delete</button>
+                            <button class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded">Edit</button>
+                        </div>
+                    </div>
+                    <!-- More projects... -->
+                </div>
+            </div>  
+        </section>
+        
+
+        <section class="mb-6">
+            <div class="bg-white shadow rounded-lg p-6">
+                <h2 class="text-xl font-semibold text-gray-800">Customer Projects</h2>
+                <div class="overflow-x-auto mt-4">
+                    <table class="min-w-full leading-normal">
+                        <thead>
+                            <tr>
+                                <th class="border-b-2 border-gray-300 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Project ID</th>
+                                <th class="border-b-2 border-gray-300 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Project Name</th>
+                                <th class="border-b-2 border-gray-300 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Customer Name</th>
+                                <th class="border-b-2 border-gray-300 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
+                                <th class="border-b-2 border-gray-300 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Replace with data -->
+                            <tr>
+                                <td class="border-b border-gray-200 px-4 py-3 text-sm">001</td>
+                                <td class="border-b border-gray-200 px-4 py-3 text-sm">Renovation of Residential Villa</td>
+                                <td class="border-b border-gray-200 px-4 py-3 text-sm">John Doe</td>
+                                <td class="border-b border-gray-200 px-4 py-3 text-sm">
+                                    <span class="inline-block bg-green-200 text-green-800 rounded-full px-3 py-1 text-xs font-semibold">In Progress</span>
+                                </td>
+                                <td class="border-b border-gray-200 px-4 py-3 text-sm">
+                                    <a href="#" class="text-indigo-600 hover:text-indigo-800">Details</a>
+                                    <a href="#" class="text-indigo-600 hover:text-indigo-800 ml-4">Update Status</a>
+                                </td>
+                            </tr>
+                            <!-- More rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-6">
+            <div class="bg-white shadow rounded-lg p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Contact Us</h2>
+                <form action="#" method="POST">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
+                        <textarea id="message" name="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                            Send
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section
+
+        <section class="mb-6">
+            <div class="bg-white shadow rounded-lg p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Contractor Dashboard</h2>
+                
+                <!-- Profile Overview and Financial Summary -->
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <!-- Contractor Profile Overview -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Profile Overview</h3>
+                        <div class="flex items-center mt-2">
+                            <div class="shrink-0">
+                                <img class="h-10 w-10 rounded-full" src="https://placehold.co/100x100" alt="Contractor profile picture">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">John Doe</p>
+                                <p class="text-sm text-gray-500">john.doe@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Financial Summary -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700">Financial Summary</h3>
+                        <div class="mt-2">
+                            <div class="flex justify-between">
+                                <span class="text-sm font-medium text-gray-600">Total Earnings:</span>
+                                <span class="text-sm font-medium text-gray-900">$15,000</span>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <span class="text-sm font-medium text-gray-600">Pending Payments:</span>
+                                <span class="text-sm font-medium text-gray-900">$2,000</span>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <span class="text-sm font-medium text-gray-600">Last Payment Received:</span>
+                                <span class="text-sm font-medium text-gray-900">$1,200 on 15th Nov 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Assigned Projects -->
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold text-gray-700">Assigned Projects</h3>
+                    <ul class="list-disc pl-5 mt-2">
+                        <li class="mb-1 text-sm text-gray-600">Project A - <span class="text-green-600">In Progress</span></li>
+                        <li class="mb-1 text-sm text-gray-600">Project B - <span class="text-red-600">Pending</span></li>
+                        <li class="mb-1 text-sm text-gray-600">Project C - <span class="text-blue-600">Completed</span></li>
+                    </ul>
+                </div>
+        
+                <!-- Monthly Financial Dues -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Monthly Financial Dues</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Invoice ID</th>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Amount Due</th>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Due Date</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600">
+                                <tr>
+                                    <td class="py-3 px-4">#1023</td>
+                                    <td class="py-3 px-4">$3,000</td>
+                                    <td class="py-3 px-4">15th Nov 2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4">#1024</td>
+                                    <td class="py-3 px-4">$1,200</td>
+                                    <td class="py-3 px-4">20th Nov 2023</td>
+                                </tr>
+                                <!-- More rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Bank Account Information -->
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Bank Account Information</h3>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm font-medium text-gray-600">Account Number:</span>
+                        <span class="text-sm font-medium text-gray-900">****-****-1234</span>
+                    </div>
+                    <div class="mt-4">
+                        <button class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Change Bank Details</button>
+                    </div>
+                </div>
+        
+                <!-- Action Buttons -->
+                <div class="flex mt-4">
+                    <button class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2">Update Profile</button>
+                    <button class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">View More Projects</button>
+                </div>
+            </div>
+        </section>
+    </form>
+    
+    </main>
+
+
+    <footer class="bg-white py-7 mt-44">
+        <p class="text-center text-gray-800">© 2024 Bonyan. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Search functionality for projects for tender
+        const searchInput = document.querySelector('input[type="search"]');
+        searchInput.addEventListener('input', function() {
+            const searchValue = this.value.toLowerCase();
+            const projectEntries = document.querySelectorAll('.container .bg-white .mb-4');
+            projectEntries.forEach(entry => {
+                const projectText = entry.textContent.toLowerCase();
+                const isVisible = projectText.includes(searchValue);
+                entry.style.display = isVisible ? 'block' : 'none';
+            });
+        });
+    
+        // Handle offer submissions
+        document.querySelectorAll('.bg-blue-500').forEach(submitButton => {
+            submitButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                const priceInput = this.previousElementSibling;
+                const price = priceInput.value;
+                if (!price) {
+                    alert('Please enter a price before submitting your offer.');
+                    return;
+                }
+                console.log(`Offer submitted: ${price}`);
+                alert('Offer successfully submitted.');
+                // Reset the input field after successful submission
+                priceInput.value = '';
+            });
+        });
+    
+        // Handle project deletions
+        document.querySelectorAll('.bg-red-500').forEach(deleteButton => {
+            deleteButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                if (confirm('Are you sure you want to delete this project?')) {
+                    this.closest('.mb-4').remove();
+                    console.log('Project has been deleted.');
+                }
+            });
+        });
+    
+        // Handle project edits
+        document.querySelectorAll('.bg-yellow-500').forEach(editButton => {
+            editButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                alert('Edit functionality is currently under development.');
+            });
+        });
+    
+        // Additional functionality like managing financial portfolio and customer projects could follow a similar pattern
+        // For example, you might want to add event listeners for the 'Change Bank Details' button
+        document.querySelector('.text-white.bg-blue-600').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('Change bank details feature is not yet implemented.');
+        });
+    });
+    
+    </script>
+    
+    

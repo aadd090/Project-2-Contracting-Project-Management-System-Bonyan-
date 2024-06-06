@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonyan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .search-bar {
+            width: 200px;
+            height: 40px;
+            border: 2px solid #000000;
+            padding-left: 10px;
+            border-radius: 9999px; /* rounded edges */
+            position: relative;
+        }
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 0.95rem;
+            transform: translateY(-50%);
+        }
+        .button-blue {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-outline {
+            background-color: transparent;
+            color: #004aad;
+            padding: 10px 15px;
+            border: 2px solid #004aad;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .button-Serves {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .content-box {
+            background-color: #ffffff;
+            color: rgb(13, 125, 216);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h3 {
+            color: #023151;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #37d0d87f, #004bad);
+            background-image: url('http://localhost/img/BB2.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0; /* Blue to green gradient */
+        }
+       
+    </style>
+</head>
+<body class="gradient-bg">
+    <header class="bg-white">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/28d4mwyG/logo.png" href="HomePageVIstorT.html" alt="Bonyan" class="mr-1">
+                <a href="HomePageVIstorT.html" class="text-2xl font-bold">Bonyan | بُنيان</a>
+            </div>
+            <nav>
+                <a href="HomePageVIstorT.html" class="text-blue-600 hover:text-blue-800">Home</a>
+
+                <button class="button-outline mx-1" onclick="location.href='Login.html';">Login</button>
+                <button class="button-blue mx-1" onclick="location.href='register.html';">Register</button>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto my-9 p-8">
+        <section class="text-center mb-10">
+            <h2 class="text-3xl font-bold mb-3 text-white">Discover Bonyan: Your Gateway to Secure, High-Performance Contracting</h2>
+            <p class="text-lg text-white">Solutions with a User-Friendly Interface, Unmatched Compatibility, Reliable Guarantees, and Credibility You Can Trust.</p>
+        </section>
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="content-box">
+                <h3 class="text-lg font-semibold mb-2">Project Addition:</h3>
+                <p>The client starts by adding the new project details, specifying the scope, budget, and timeline.</p>
+                <p>Requirements are presented clearly to ensure contractors accurately understand the project.</p>
+            </div>
+            <div class="content-box">
+                <h3 class="text-lg font-semibold mb-2">Tender Selection:</h3>
+                <p>The client receives tender offers from interested contractors.</p>
+                <p>The client can compare the bids based on price, experience, and previous ratings of the contractors.</p>
+                <p>The decision is made based on the client's criteria, with support from the system's intelligent analytics.</p>
+            </div>
+            <div class="content-box">
+                <h3 class="text-lg font-semibold mb-2">Communication:</h3>
+                <p>During the project, the system provides direct and effective communication channels between the client and the contractor.</p>
+                <p>Constant and clear communication ensures the project progresses according to the plan and minimizes any misunderstandings or delays.</p>
+            </div>
+            <div class="content-box">
+                <h3 class="text-lg font-semibold mb-2">Evaluation:</h3>
+                <p>Upon project completion, the client evaluates the contractor's performance based on criteria such as work quality.</p>
+                <p>Constant and clear evaluation contributes to building a comprehensive database of contractors.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white py-7 mt-44">
+        <p class="text-center text-gray-800">© 2024 Bonyan. All rights reserved.</p>
+    </footer>
+   </body>
+   </html>
+   
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Example of smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+        // Example popup for Login/Register feedback
+        const loginButton = document.querySelector('button[onclick*="Login.html"]');
+        const registerButton = document.querySelector('button[onclick*="register.html"]');
+        
+        // Simple feedback function
+        const showFeedback = (message) => {
+            alert(message);
+        };
+    
+        loginButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevents the default action to demonstrate feedback, replace with actual login logic
+            // Here, you would typically have a redirect or open a modal for login
+        });
+    
+        registerButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevents the default action to demonstrate feedback, replace with actual register logic
+            showFeedback('Redirecting to registration...');
+            // Similarly, you'd redirect or open a modal for registration
+        });
+    
+        // Dynamically load content example (pseudo-code)
+        // This is a conceptual example. You'd replace this with actual dynamic loading logic, perhaps using fetch API to get content.
+        const loadDynamicContent = () => {
+            // Assuming 'content-box' classes are placeholders for dynamic content
+            document.querySelectorAll('.content-box').forEach(box => {
+                // Placeholder: Load content dynamically here
+                const dynamicContent = 'Dynamic content loaded here. Replace this with actual content loading logic.';
+                const p = document.createElement('p');
+                p.textContent = dynamicContent;
+                box.appendChild(p);
+            });
+        };
+    
+        // Call dynamic content loading function
+        loadDynamicContent();
+    });
+    </script>
+    

@@ -1,0 +1,165 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonyan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .search-bar {
+            width: 200px;
+            height: 40px;
+            border: 2px solid #000000;
+            padding-left: 10px;
+            border-radius: 9999px; /* rounded edges */
+            position: relative;
+        }
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 0.95rem;
+            transform: translateY(-50%);
+        }
+        .button-blue {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-outline {
+            background-color: transparent;
+            color: #004aad;
+            padding: 10px 15px;
+            border: 2px solid #004aad;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .button-Serves {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .content-box {
+            background-color: #ffffff;
+            color: rgb(13, 125, 216);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h3 {
+            color: #023151;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #37d0d87f, #004bad);
+            background-image: url('http://localhost/img/BB2.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0; /* Blue to green gradient */
+        }
+    </style>
+</head>
+<head>
+<body class="gradient-bg">
+    <header class="bg-white py-1">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/28d4mwyG/logo.png" href="HomePageVIstorT.html" alt="Bonyan" class="mr-2">
+                <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Contractor_Dashboard.html" class="text-2xl font-bold">Bonyan | بُنيان</a>
+            </div>
+            <nav>
+                <nav class="flex items-center">
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Contractor_Dashboard.html" class="text-gray-700 mx-3">Home</a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Bills.html" class="text-gray-700 mx-3">Bills</a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Notifications.html" class="text-gray-700 mx-5"><i class="fas fa-bell"></i></a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/chat.html" class="text-gray-700 mx-5"><i class="fas fa-comment-alt"></i></a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Contractor/Account.html" class="text-gray-700 mx-5"><i class="fas fa-user-circle"></i></a>
+                 </nav>
+            </nav>
+            
+        </div>
+    </header>
+
+    <form action="http://localhost/project_Bonyan/code/CODE_PHP/Notifications.php" method="post">
+
+    <div class="container mx-auto p-6">
+        <div class="flex justify-between items-center bg-white p-4 rounded-t-lg shadow">
+            <h1 class="text-xl font-bold text-gray-800">Notifications:</h1>
+        </div>
+
+        <div class="bg-white p-4 rounded-b-lg shadow">
+            <!-- Notification item -->
+            <div class="flex justify-between items-center p-4 border-b border-gray-200">
+            </div>
+            <!-- Repeat for each notification -->
+            <div class="flex justify-between items-center p-4 border-b border-gray-200">
+            </div>
+            <!-- ... -->
+        </div>
+    </div>
+
+    </form>
+
+    <footer class="bg-white py-7 mt-44">
+        <p class="text-center text-gray-800">&copy; 2024 Bonyan Contracting. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Mock function to simulate fetching notifications from a server
+    function fetchNotifications() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve([
+                    { id: 1, content: 'Your project has been approved!' },
+                    { id: 2, content: 'New message from John Doe' },
+                    { id: 3, content: 'Project deadline approaching' }
+                    
+                ]);
+            }, 1000); // Simulate network delay
+        });
+    }
+
+    // Function to render notifications to the page
+    function renderNotifications(notifications) {
+        const container = document.querySelector('.bg-white.p-4.rounded-b-lg.shadow');
+
+        notifications.forEach(notification => {
+            const notificationElement = document.createElement('div');
+            notificationElement.classList.add('flex', 'justify-between', 'items-center', 'p-4', 'border-b', 'border-gray-200');
+            notificationElement.innerHTML = `
+                <div>${notification.content}</div>
+                <button class="text-red-500" onclick="deleteNotification(${notification.id})">Delete</button>
+            `;
+            container.appendChild(notificationElement);
+        });
+    }
+
+    // Function to delete a notification (placeholder function)
+    window.deleteNotification = function(id) {
+        console.log('Deleting notification with ID:', id);
+        // Here you would typically make an AJAX request to your server to delete the notification
+        // For now, just remove it from the DOM for demonstration
+        alert(`Delete notification ${id} not implemented`);
+    }
+
+    // Simulate fetching notifications from a server
+    fetchNotifications().then(notifications => {
+        renderNotifications(notifications);
+    });
+});
+
+</script>

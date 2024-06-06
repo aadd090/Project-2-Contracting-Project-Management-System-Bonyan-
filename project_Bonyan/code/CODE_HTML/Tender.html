@@ -1,0 +1,155 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonyan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .search-bar {
+            width: 200px;
+            height: 40px;
+            border: 2px solid #000000;
+            padding-left: 10px;
+            border-radius: 9999px; /* rounded edges */
+            position: relative;
+        }
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 0.95rem;
+            transform: translateY(-50%);
+        }
+        .button-blue {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-outline {
+            background-color: transparent;
+            color: #004aad;
+            padding: 10px 15px;
+            border: 2px solid #004aad;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .button-Serves {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .content-box {
+            background-color: #ffffff;
+            color: rgb(13, 125, 216);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h3 {
+            color: #023151;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #37d0d87f, #004bad);
+            background-image: url('http://localhost/img/BB2.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0; /* Blue to green gradient */
+        }
+    </style>
+</head>
+<head>
+<body class="gradient-bg">
+    <header class="bg-white py-1">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/28d4mwyG/logo.png" href="HomePageVIstorT.html" alt="Bonyan" class="mr-2">
+                <a href="http://localhost/project_Bonyan/code/CODE_HTML/Homepagecustomr.html" class="text-2xl font-bold">Bonyan | بُنيان</a>
+            </div>
+            <nav>
+                <nav class="flex items-center">
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Homepagecustomr.html" class="text-gray-700 mx-3">Home</a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Bills.html" class="text-gray-700 mx-3">Bills</a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Notifications.html" class="text-gray-700 mx-5"><i class="fas fa-bell"></i></a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/chat.html" class="text-gray-700 mx-5"><i class="fas fa-comment-alt"></i></a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Account.html" class="text-gray-700 mx-5"><i class="fas fa-user-circle"></i></a>
+                </nav>
+            </nav>
+            
+        </div>
+    </header>
+
+    <div class="max-w-2xl mx-auto p-5">
+        <!-- Tender header -->
+        <div class="flex justify-between items-center bg-white p-4 rounded-t-lg shadow">
+            <h1 class="text-xl font-bold text-gray-800">Tender:</h1>
+            <a href="Payment.html" class="text-white bg-blue-600 p-2 rounded-full shadow-lg text-lg">
+                <i class="fas fa-print"></i>
+            </a>
+        </div>
+    
+        <!-- Tender items -->
+        <div class="mt-10 bg-white p-14 rounded-lg shadow-xs mb-6">
+            <form action="http://localhost/project_Bonyan/code/CODE_PHP/Tender.php" method="post">
+
+            <!-- Repeat this div for each tender item -->
+            <div class="flex items-center justify-between border-b p-4">
+                    <div class="text-gray-800">Project Name</div>
+                <div>
+                    <span class="text-gray-600">Price: $1000</span>
+                    <a href="Payment.html" class="text-white bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded focus:outline-none">Accept</a>
+                    <a href="Create_Project.html" class="text-white bg-red-500 hover:bg-red-600 px-3 py-1 rounded focus:outline-none ml-2">Reject</a>
+                </div>
+            </div>
+        </form>
+      </div>
+    </div>
+    <footer class="bg-white py-9 mt-44">
+        <p class="text-center text-gray-800">© 2024 Bonyan. All rights reserved.</p>
+    </footer>
+ 
+   </body>
+   </html>
+   
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Function to simulate accepting a tender
+        const acceptTender = (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            // Simulate accepting tender logic
+            alert("Tender accepted. Redirecting to payment...");
+            // Redirect to payment page or handle payment logic here
+            window.location.href = "Payment.html";
+        };
+    
+        // Function to simulate rejecting a tender
+        const rejectTender = (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            // Simulate rejecting tender logic
+            alert("Tender rejected. Returning to project creation...");
+            // Redirect to create project page or handle rejection logic here
+            window.location.href = "Create_Project.html";
+        };
+    
+        // Attach the above functions to accept and reject buttons
+        document.querySelectorAll('a[href="Payment.html"]').forEach(button => {
+            button.addEventListener('click', acceptTender);
+        });
+    
+        document.querySelectorAll('a[href="Create_Project.html"]').forEach(button => {
+            button.addEventListener('click', rejectTender);
+        });
+    });
+    </script>
+    

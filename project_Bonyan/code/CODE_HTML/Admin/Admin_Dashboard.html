@@ -1,0 +1,460 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonyan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .search-bar {
+            width: 200px;
+            height: 40px;
+            border: 2px solid #000000;
+            padding-left: 10px;
+            border-radius: 9999px; /* rounded edges */
+            position: relative;
+        }
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 0.95rem;
+            transform: translateY(-50%);
+        }
+        .button-blue {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-outline {
+            background-color: transparent;
+            color: #004aad;
+            padding: 10px 15px;
+            border: 2px solid #004aad;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .button-Serves {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .content-box {
+            background-color: #ffffff;
+            color: rgb(13, 125, 216);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h3 {
+            color: #023151;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #37d0d87f, #004bad);
+            background-image: url('http://localhost/img/BB2.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0; /* Blue to green gradient */
+        }
+    </style>
+</head>
+<head>
+    <body class="gradient-bg">
+        <header class="bg-white py-1">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="https://i.postimg.cc/28d4mwyG/logo.png" href="HomePageVIstorT.html" alt="Bonyan" class="mr-2">
+                    <h1 class="text-2xl font-bold">Bonyan | بُنيان</h1>
+                </div>
+                <nav>
+                    <nav class="flex items-center">
+                        <a href="Admin_Dashboard.html" class="text-gray-700 mx-3">Home</a>
+                        
+                     </nav>
+                </nav>
+            </div>
+        </header>
+    <main class="container mx-auto p-6">
+        <form action="http://localhost/project_Bonyan/code/CODE_PHP/Admin_Dashboard.php" method="post">
+
+            <div class="container mx-auto mt-10 p-5 bg-white rounded-lg shadow-lg">
+                <div class="flex justify-between">
+                    <div class="flex space-x-4">
+                        <!-- Dashboard Navigation -->
+                        <a href="#project-management" class="button-blue">Project Management</a>
+                        <a href="#customer-management" class="button-outline">Customer Management</a>
+                        <a href="#tender-management" class="button-outline">Tender Management</a>
+                        <a href="#financial-operations" class="button-outline">Financial Operations</a>
+                        <a href="Contractor_Management.html" class="button-outline">Contractor Management</a>
+
+                        <!-- Additional sections can be added here -->
+                    </div>
+                    <div>
+                        <!-- Admin Profile and Logout could go here -->
+                        <a href="#logout" class="button-Serves">Logout</a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Main Dashboard Content -->
+            <div class="container mx-auto my-10">
+                <!-- Project Management Section -->
+                <!-- Project Management Section -->
+                  <div id="project-management" class="p-5 bg-white rounded-lg shadow-lg mb-10">
+                     <h2 class="text-2xl font-bold mb-5">Project Management</h2>
+
+                     <!-- Form to Add New Project -->
+                       <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="mb-4 flex justify-end">
+                     <input type="text" name="new_project_name" placeholder="Enter new project name" class="form-input mr-3 py-2 px-4 rounded" required>
+                      <button type="submit" class="button-blue mb-2">Add New Project</button>
+                    </form>
+    <!-- Projects Table -->
+     <div class="overflow-x-auto">
+        <?php foreach ($projects as $project): ?>
+
+        <table class="min-w-full leading-normal">
+            <thead>
+                <tr>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                        Project Name
+                    </th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                        Status
+                    </th>
+                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Project Row -->
+                <tr>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div class="flex items-center">
+                            <div class="ml-3">
+                                <p class="text-gray-900 whitespace-no-wrap">
+                                    Building a house
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                            <span aria-hidden="true" class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                            <span class="relative">In Progress</span>
+                        </span>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div class="flex items-center justify-between border-b p-4">
+                            <div class="text-gray-800"><?php echo htmlspecialchars($project['name']); ?></div>
+                            <div>
+                                <a href="edit_project.php?id=<?php echo $project['id']; ?>" class="text-blue-600 hover:text-blue-900">Edit</a>
+                                <a href="delete_project.php?id=<?php echo $project['id']; ?>" class="text-red-600 hover:text-red-900 ml-4">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <!-- More project rows... -->
+            </tbody>
+        </table>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+
+
+                <!-- Customer Management Section -->
+                <!-- Customer Management Section -->
+<div id="customer-management" class="p-5 bg-white rounded-lg shadow-lg mb-10">
+    <h2 class="text-2xl font-bold mb-5">Customer Management</h2>
+    
+    <!-- Communication with Customers -->
+    <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-3">Communication with Customers</h3>
+        <!-- Potential messaging interface or links to message customers -->
+        <a href="/messages" class="button-blue py-2 px-4 mb-4 inline-block">View Messages</a>
+    </div>
+
+    <!-- Projects for Tender -->
+    <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-3">Projects for Tender</h3>
+        <!-- List of projects -->
+        <div class="overflow-x-auto">
+            <table class="min-w-full leading-normal">
+                <!-- Table headers -->
+                <thead>
+                    <tr>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Project Name
+                        </th>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Status
+                        </th>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($projectsForTender as $project): ?>
+                    <tr>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo htmlspecialchars($project['name']); ?></td>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo htmlspecialchars($project['status']); ?></td>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            <!-- Define your actions here -->
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+
+    <!-- Service Evaluations -->
+    <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-3">Service Evaluations</h3>
+        <!-- Could be a list or a link to view evaluations -->
+        <a href="/evaluations" class="button-blue py-2 px-4 mb-4 inline-block">View Evaluations</a>
+    </div>
+
+    <!-- Check Project Status -->
+    <div>
+        <h3 class="text-xl font-semibold mb-3">Check Project Status</h3>
+        <!-- Input for searching a project status -->
+        <div class="flex flex-wrap items-stretch w-full mb-4 relative">
+            
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+                <input type="text" name="project_id" class="...other classes..." placeholder="12345">
+                <button type="submit" class="button-blue px-4 rounded">Check Status</button>
+            </form>
+
+            
+        </div>
+    </div>
+</div>
+
+        
+ <!-- Tender Management Section -->
+<div id="tender-management" class="p-5 bg-white rounded-lg shadow-lg mb-10">
+    <h2 class="text-2xl font-bold mb-5">Tender Management</h2>
+    
+    <!-- Add Project to Tender -->
+    <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-3">Add Project to Tender</h3>
+        <form class="flex items-center mb-6" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+            <input type="text" name="project_id" class="form-input mr-3 py-2 px-4 rounded" placeholder="Enter Project ID" required>
+            <button type="submit" class="button-blue py-2 px-4">Add to Tender</button>
+        </form>
+        
+    </div>
+
+    <!-- List of Tenders -->
+    <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-3">Current Tenders</h3>
+        <div class="overflow-x-auto">
+            <table class="min-w-full leading-normal">
+                <thead>
+                    <tr>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Tender ID
+                        </th>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Project Name
+                        </th>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Deadline
+                        </th>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($tenders as $tender): ?>
+                        <tr>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo htmlspecialchars($tender['id']); ?></td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo htmlspecialchars($tender['project_name']); ?></td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"><?php echo htmlspecialchars($tender['deadline']); ?></td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <!-- Define your action buttons here -->
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+
+    <!-- Select Contractor -->
+    <div>
+        <h3 class="text-xl font-semibold mb-3">Select Contractor for Tender</h3>
+        <form class="flex items-center" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+            <select name="contractor_id" class="form-select mr-3 py-2 px-4 rounded" aria-label="Select Contractor" required>
+                <?php foreach ($contractors as $contractor): ?>
+                    <option value="<?php echo $contractor['id']; ?>">
+                        <?php echo htmlspecialchars($contractor['name']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <input type="hidden" name="tender_id" value="ID_OF_TENDER_TO_ASSIGN_CONTRACTOR">
+            <button type="submit" class="button-blue py-2 px-4">Select Contractor</button>
+        </form>
+        
+    </div>
+</div>
+
+        <!-- Financial Operations Section -->
+<div id="financial-operations" class="p-5 bg-white rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold mb-5">Financial Operations</h2>
+
+    <!-- Financial Reports -->
+    <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-3">Financial Reports</h3>
+        <a href="/financial-reports" class="button-blue py-2 px-4 mb-4 inline-block">View Reports</a>
+    </div>
+
+    <!-- Invoices -->
+    <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-3">Invoices</h3>
+        <div class="overflow-x-auto">
+            <table class="min-w-full leading-normal">
+                <thead>
+                    <tr>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Invoice ID
+                        </th>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Contractor/Customer Name
+                        </th>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Amount
+                        </th>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Due Date
+                        </th>
+                        <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($invoices as $invoice): ?>
+                        <tr>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <?php echo htmlspecialchars($invoice['id']); ?>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <?php echo htmlspecialchars($invoice['name']); ?>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <?php echo htmlspecialchars($invoice['amount']); ?>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <?php echo htmlspecialchars($invoice['due_date']); ?>
+                            </td>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+
+    <!-- Payment Processing -->
+    <div>
+        <h3 class="text-xl font-semibold mb-3">Process Payments</h3>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                <input type="hidden" name="invoice_id" value="<?php echo $invoice['id']; ?>">
+                <button type="submit" class="button-blue py-2 px-4">Process Payment</button>
+            </form>
+        </td>
+    </tr>
+<?php endforeach; ?>
+    </div>
+</div>
+</form>
+
+</main>
+
+
+    <footer class="bg-white py-8 mt-44">
+        <p class="text-center text-gray-800">© 2024 Bonyan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Functionality for switching between dashboard sections
+        const navLinks = document.querySelectorAll('nav a'); // Select all navigation links
+        const sections = document.querySelectorAll('div[id]'); // Select all sections with an ID
+    
+        // Function to hide all sections
+        const hideAllSections = () => {
+            sections.forEach(section => {
+                section.style.display = 'none'; // Hide section
+            });
+            navLinks.forEach(link => {
+                link.classList.replace('button-blue', 'button-outline'); // Reset link styles
+            });
+        };
+    
+        // Function to show the selected section
+        const showSection = (hash) => {
+            hideAllSections(); // First hide all sections
+            const section = document.querySelector(hash);
+            if (section) {
+                section.style.display = ''; // Show the selected section
+                const activeLink = document.querySelector(`nav a[href="${hash}"]`);
+                if (activeLink) {
+                    activeLink.classList.replace('button-outline', 'button-blue'); // Highlight the active link
+                }
+            }
+        };
+    
+        // Event listener for navigation link clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                const hash = link.getAttribute('href'); // Get the href attribute value
+                history.pushState(null, null, hash); // Change the hash in the URL
+                showSection(hash); // Show the clicked section
+            });
+        });
+    
+        // Function to check URL hash on load and display the corresponding section
+        const checkHash = () => {
+            const hash = window.location.hash;
+            if (hash) {
+                showSection(hash);
+            } else {
+                showSection('#project-management'); // Default to show the first section
+            }
+        };
+    
+        // Check the URL hash on load
+        checkHash();
+    
+        // Listen for hash changes to handle browser navigation
+        window.addEventListener('hashchange', checkHash);
+    
+        // Additional functionality like opening modals or handling forms would go here
+        // For example, opening a modal for adding a new project
+        window.openProjectModal = () => {
+            // Your modal opening logic here
+            console.log('Opening project modal...');
+        };
+    });
+</script>

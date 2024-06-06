@@ -1,0 +1,323 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonyan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+       body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to right, #5de0e6, #004aad); /* Blue to green gradient */
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+        .nav-links {
+            color: #000;
+            text-decoration: none;
+            margin-right: 16px;
+            font-size: 1rem;
+        }
+        .login-form {
+            max-width: 320px;
+            margin: 2rem auto;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+      
+        .form-check-label {
+            margin-left: 0.5rem;
+        }
+       
+        .forgot-password {
+            text-align: right;
+            display: block;
+            margin-top: 0.5rem;
+            color: #004aad;
+            cursor: pointer;
+        }
+        .link-back {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: block;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .button-blue {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-outline {
+            background-color: transparent;
+            color: #004aad;
+            padding: 10px 15px;
+            border: 2px solid #004aad;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .button-Serves {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .content-box {
+            background-color: #ffffff;
+            color: rgb(13, 125, 216);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h3 {
+            color: #023151;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to right, #5de0e6, #004aad); /* Blue to green gradient */
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+        .nav-links {
+            color: #000;
+            text-decoration: none;
+            margin-right: 16px;
+            font-size: 1rem;
+        }
+        .login-form {
+            max-width: 320px;
+            margin: 2rem auto;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .form-input {
+            border: 2px solid #000;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            width: 100%;
+        }
+        .form-check-label {
+            margin-left: 0.5rem;
+        }
+       
+        .Register_contacrot {
+            text-align: right;
+            display: block;
+            margin-top: 0.5rem;
+            color: #004aad;
+            cursor: pointer;
+        }
+        .link-back {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: block;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .button-blue {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-outline {
+            background-color: transparent;
+            color: #004aad;
+            padding: 10px 15px;
+            border: 2px solid #004aad;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .button-Serves {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .content-box {
+            background-color: #ffffff;
+            color: rgb(13, 125, 216);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h3 {
+            color: #023151;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #37d0d87f, #004bad);
+            background-image: url('http://localhost/img/BB2.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0; /* Blue to green gradient */
+        }
+       
+    </style>
+</head>
+<body class="gradient-bg">
+    <header class="bg-white">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/28d4mwyG/logo.png" href="HomePageVIstorT.html" alt="Bonyan" class="mr-1">
+                <a href="HomePageVIstorT.html" class="text-2xl font-bold">Bonyan | بُنيان</a>
+            </div>
+            <nav>
+                <a href="HomePageVIstorT.html" class="text-blue-600 hover:text-blue-800">Home</a>
+
+                <button class="button-outline mx-1" onclick="location.href='Login.html';">Login</button>
+                <button class="button-blue mx-1">Register</button>
+            </nav>
+        </div>
+    </header>
+        <main class="mx-auto flex items-center pr-55 py-4">
+            <form action="http://localhost/project_Bonyan/code/CODE_PHP/Register.php" method="post" class="login-form">
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" name="first-name" class="form-input" placeholder="First name">
+            
+                <label for="last-name">Last name</label>
+                <input type="text" id="last-name" name="last-name" class="form-input" placeholder="Last name">
+            
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-input" placeholder="Username">
+            
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-input" placeholder="Password">
+            
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" class="form-input" placeholder="Confirm Password">
+            
+                <label for="phone-number">Phone number</label>
+                <input type="tel" id="phone-number" name="phone-number" class="form-input" placeholder="Phone number">
+            
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Email">
+                <a class="Register_contacrot" href="http://localhost/project_Bonyan/code/CODE_HTML/Register_as_contractor.html" class="Register_as_contractor">Register as a contractor?</a>
+
+                <button type="submit" class="w-full py-3 mt-4 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-700">Register</button>  
+
+            </form>
+                       
+     
+
+         </main>
+         <footer class="bg-white py-7 mt-44">
+            <p class="text-center text-gray-800">&copy; 2024 Bonyan Contracting. All rights reserved.</p>
+     </footer>
+    
+    </body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.querySelector('.login-form');
+
+    // Utility function to validate email
+    function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    // Utility function to validate phone number
+    function validatePhoneNumber(number) {
+        const re = /^\d{10}$/;
+        return re.test(String(number));
+    }
+
+    // Main validation function
+    function validateForm() {
+        let isValid = true;
+        const inputs = [firstNameInput, lastNameInput, usernameInput, passwordInput, confirmPasswordInput, phoneNumberInput, emailInput];
+        
+        // Reset styles before validation
+        inputs.forEach(input => input.style.border = "2px solid #000");
+
+        // Validate each input
+        inputs.forEach(input => {
+            if (input.value.trim() === '') {
+                input.style.border = "2px solid red";
+                isValid = false;
+            }
+        });
+
+        // Specific validations
+        if (!validateEmail(emailInput.value)) {
+            emailInput.style.border = "2px solid red";
+            isValid = false;
+        }
+
+        if (!validatePhoneNumber(phoneNumberInput.value)) {
+            phoneNumberInput.style.border = "2px solid red";
+            isValid = false;
+        }
+
+        if (passwordInput.value.trim() !== confirmPasswordInput.value.trim()) {
+            passwordInput.style.border = confirmPasswordInput.style.border = "2px solid red";
+            alert('Passwords do not match.');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    // Form submission event
+    document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.querySelector('.login-form');
+
+    registerForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(registerForm);
+        
+        fetch('http://localhost/project_Bonyan/code/CODE_PHP/code/CODE_PHP/Register.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = 'http://localhost/project_Bonyan/code/CODE_HTML/Login.html';
+            } else {
+                alert('Failed to register. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was a problem with your registration.');
+        });
+    });
+});
+
+
+    // Link to register as a contractor
+    const registerAsContractorLink = document.querySelector('.Register_contacrot');
+    registerAsContractorLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.location.href = 'http://localhost/project_Bonyan/code/CODE_HTML/Register_as_contractor.html';
+    });
+});
+
+</script>
+    

@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonyan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .search-bar {
+            width: 200px;
+            height: 40px;
+            border: 2px solid #000000;
+            padding-left: 10px;
+            border-radius: 9999px; /* rounded edges */
+            position: relative;
+        }
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 0.95rem;
+            transform: translateY(-50%);
+        }
+        .button-blue {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-outline {
+            background-color: transparent;
+            color: #004aad;
+            padding: 10px 15px;
+            border: 2px solid #004aad;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .button-group form {
+            display: inline-block;
+            margin-right: 20px; 
+        }
+
+        
+        .button-Serves {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .content-box {
+            background-color: #ffffff;
+            color: rgb(13, 125, 216);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content-box h3 {
+            color: #023151;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #37d0d87f, #004bad);
+            background-image: url('http://localhost/img/BB2.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0; /* Blue to green gradient */
+        }
+    </style>
+</head>
+<head>
+<body class="gradient-bg">
+    <header class="bg-white py-1">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.postimg.cc/28d4mwyG/logo.png" href="HomePageVIstorT.html" alt="Bonyan" class="mr-2">
+                <a href="http://localhost/project_Bonyan/code/CODE_HTML/Homepagecustomr.html" class="text-2xl font-bold">Bonyan | بُنيان</a>
+            </div>
+            <nav>
+                <nav class="flex items-center">
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Homepagecustomr.html" class="text-gray-700 mx-3">Home</a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Bills.html" class="text-gray-700 mx-3">Bills</a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Notifications.html" class="text-gray-700 mx-5"><i class="fas fa-bell"></i></a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/chat.html" class="text-gray-700 mx-5"><i class="fas fa-comment-alt"></i></a>
+                    <a href="http://localhost/project_Bonyan/code/CODE_HTML/Account.html" class="text-gray-700 mx-5"><i class="fas fa-user-circle"></i></a>
+                </nav>
+            </nav>
+            
+        </div>
+    </header>
+    <form action="http://localhost/project_Bonyan/code/CODE_PHP/project_management.php" method="post">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 my-6">
+                <div class="flex justify-between items-center bg-white p-5 rounded-lg shadow-xs">
+                    <h2 class="text-xl font-semibold text-gray-800">Add a Project to Tender:</h2>
+                    <a href="Create_Project.html" class="p-2 rounded-full bg-blue-500 text-white text-2xl shadow-lg">+</a>
+                </div>
+             <!-- Display projects -->
+            <?php foreach ($projects as $project): ?>
+            <div class="mt-10 bg-white p-14 rounded-lg shadow-xs mb-6">
+                <div class="flex items-center justify-between">
+                    <p class="text-gray-800">Project ID: <?= htmlspecialchars($project['ProjectID']) ?><br>
+                        Project Name: <?= htmlspecialchars($project['ProjectName']) ?><br>
+                        Project Requirements: <?= htmlspecialchars($project['ProjectRequirements']) ?></p>
+                    <div class="flex-shrink-0 pr-2">
+                        <div class="button-group">
+                            <input type="hidden" name="project_id" value="<?= htmlspecialchars($project['ProjectID']) ?>">
+                            <button type="button" name="edit" class="px-2 py-2 text-sm font-medium text-blue-600 bg-blue-100 rounded-md hover:bg-blue-200">Edit</button>
+                            <button type="button" name="delete" class="px-2 py-2 text-sm font-medium text-red-600 bg-red-100 rounded-md hover:bg-red-200">Delete</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+            
+            </div>
+
+        </form>
+ 
+
+        <footer class="bg-white py-9 mt-44">
+            <p class="text-center text-gray-800">&copy; 2024 Bonyan Contracting. All rights reserved.</p>
+    </footer>
+    
+</body>
+
+</html>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Ensure event listeners are properly attached and redirect correctly
+        document.querySelectorAll('[name="edit"]').forEach(button => {
+            button.addEventListener('click', function() {
+                window.location.href = 'http://localhost/project_Bonyan/code/CODE_HTML/Create_Project.html';
+            });
+        });
+
+        document.querySelectorAll('[name="delete"]').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.bg-white').remove();
+                const projectId = this.closest('.bg-white').querySelector('input[name="project_id"]').value;
+                console.log(`Project with ID ${projectId} deleted`);
+            });
+        });
+    });
+</script>
